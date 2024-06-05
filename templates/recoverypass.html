@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperación de Contraseña</title>
+    <link rel="stylesheet" href="/styles/recovery.css">
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"></script>
+</head>
+<body>
+    <form>
+        <h2>Recuperación de Contraseña</h2>
+        <p>Introduce tu correo electrónico para recuperar tu contraseña:</p>
+        <input type="email" id="email" placeholder="Correo Electrónico" required>
+        <input type="button" value="Recuperar Contraseña" id="btnRecover">
+    </form>
+
+    <script type="module" src="/Controllers/recovery_pass.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iphone 15 pro max</title>
+    <link rel="stylesheet" href="../styles/producto.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <h1>Diego Iphone</h1>
+        <a href="./carrito.html" class="cart-button"><i class='bx bx-cart'></i> Carrito (<span id="cart-count">0</span>)</a>
+    </header>
+
+    <main>
+        <section class="producto">
+            <div class="producto-imagen">
+                <img src="../resources/images/iPhone_15_Pro_Max.webp" alt="iPhone 15 Pro Max">
+            </div>
+            
+            <div class="producto-detalles">
+                <h2>Iphone 15 pro max</h2>
+                <p class="precio">$500</p>
+                <div class="medios-pago">
+                    <h3>Pagos PSE</h3>
+                    <p>Visa, Bancolombia, MasterCard, Nequi</p>
+                </div>
+                <div class="producto-acciones">
+                    <button id="btnrent" class="btn">Comprar</button>
+                    <button id="btnaddcar" class="btn">Agregar al Carrito</button>
+                </div>
+                <p class="fabricante">Fabricante: Apple</p>
+                <div class="renta-protegida">
+                    <h3>Renta Protegida</h3>
+                    <a href="./renta-protegida.html">Seguros</a>
+                    <a href="./renta-protegida.html">Política de Protección</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="especificaciones">
+            <h2>Especificaciones Técnicas</h2>
+            <table>
+                <tr>
+                    <th>Característica</th>
+                    <th>Detalle</th>
+                </tr>
+                <tr>
+                    <td>Pantalla</td>
+                    <td>OLED de 6.7 pulgadas, Super Retina XDR con ProMotion</td>
+                </tr>
+                <tr>
+                    <td>Procesador</td>
+                    <td>A17 Pro</td>
+                </tr>
+                <tr>
+                    <td>Cámara Trasera</td>
+                    <td>Triple de 48 MP (gran angular), 12 MP (ultra gran angular y teleobjetivo) con LiDAR</td>
+                </tr>
+                <tr>
+                    <td>Batería</td>
+                    <td> Hasta 29 horas de reproducción de video</td>
+                </tr>
+                <tr>
+                    <td>Resistencia al Agua</td>
+                    <td>IP68</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="otras-bicicletas">
+            <h2>Productos Similares</h2>
+            <div class="otras-bicicletas-container" id="similar-products-container">
+                <!-- Productos similares se cargarán aquí -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Rentapp</p>
+    </footer>
+
+    <script type="module">
+        import { getBikeById, getRandomBikes } from "../controllers/db/database.js";
+    
+        document.addEventListener('DOMContentLoaded', async () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const bikeId = urlParams.get('bikeId');
+    
+            if (bikeId) {
+                const bikeDoc = await getBikeById(bikeId);
+                if (bikeDoc.exists()) {
+                    const bikeData = bikeDoc.data();
+                    document.querySelector('.producto-imagen img').src = bikeData.picture || "../resources/images/imgini.png";
+                    document.querySelector('.producto-detalles h2').innerText = bikeData.bikeName;
+                    document.querySelector('.producto-detalles .precio').innerText = `$${bikeData.pricePerDay}`;
+                    document.querySelector('.fabricante').innerText = `Propietario: ${bikeData.username || "Desconocido."}`;
+    
+                    // Populate technical specifications
+                    const specsTable = document.querySelector('.especificaciones table');
+                    specsTable.innerHTML = `
+                        <tr>
+                            <th>Característica</th>
+                            <th>Detalle</th>
+                        </tr>
+                        <tr>
+                            <td>Material del marco</td>
+                            <td>${bikeData.frameMaterial || "Desconocido"}</td>
+                        </tr>
+                        <tr>
+                            <td>Tamaño de la rueda</td>
+                            <td>${bikeData.wheelSize || "Desconocido"}</td>
+                        </tr>
+                        <tr>
+                            <td>Suspensión</td>
+                            <td>${bikeData.suspension || "Desconocido"}</td>
+                        </tr>
+                        <tr>
+                            <td>Frenos</td>
+                            <td>${bikeData.brakes || "Desconocidos"}</td>
+                        </tr>
+                        <tr>
+                            <td>Cambios</td>
+                            <td>${bikeData.changes || "Desconocidos"}</td>
+                        </tr>
+                    `;
+    
+                    // Load similar products
+                    const similarProducts = await getRandomBikes(bikeId);
+                    const similarProductsContainer = document.getElementById('similar-products-container');
+                    similarProducts.forEach(bike => {
+                        const bikeItem = document.createElement('a');
+                        bikeItem.href = `./details.html?bikeId=${bike.id}`;
+                        bikeItem.classList.add('bicicleta-item');
+                        bikeItem.innerHTML = `
+                            <img src="${bike.picture || '../resources/images/imgini.png'}" alt="${bike.bikeName}">
+                            <h3>${bike.bikeName}</h3>
+                            <p>Precio: $${bike.pricePerDay}</p>
+                        `;
+                        similarProductsContainer.appendChild(bikeItem);
+                    });
+                } else {
+                    console.error("No bike found for the given bikeId.");
+                }
+            } else {
+                console.error("No bikeId provided in URL.");
+            }
+        });
+        </script>
+    </body>
+    </html>
