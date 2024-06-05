@@ -1,34 +1,40 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: #f2f2f2;
     margin: 0;
+    color: #333;
 }
 
 header {
-    width: 100%;
-    background-color: #333;
-    color: #fff;
+    background-color: #0e0277;
     padding: 20px;
-    text-align: center;
 }
 
-header h1 {
+.header-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
     margin: 0;
+    color: #fff;
 }
 
 .container {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding-left: 20px; 
+    padding-right: 20px;
 }
 
 main {
     flex: 3;
+    padding-left: 50px; 
+    padding-right: 150px;
 }
 
 .product {
-    display: flex;
-    align-items: center;
     background-color: #fff;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -39,21 +45,17 @@ main {
 .product img {
     width: 100px;
     height: auto;
-    margin-right: 20px;
-}
-
-.product-details {
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 20px;
 }
 
 .product-details h2 {
-    margin: 0 0 10px 0;
+    margin: 0;
+    padding-left: 5px; 
+    padding-right: 5px;
 }
 
 .product-details .price {
-    color: #888;
-    margin-bottom: 10px;
+    color: #000000;
 }
 
 .product-details label {
@@ -80,27 +82,31 @@ main {
     background-color: #c82333;
 }
 
-aside.summary {
+.summary {
     flex: 1;
-    background-color: #fff;
+    background-color: #388fec;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-left: 20px;
+    color: #fff;
 }
 
 .summary h2 {
     margin-top: 0;
 }
 
+.summary-details {
+    margin-bottom: 20px;
+}
+
 .summary p {
     margin: 10px 0;
 }
 
-.summary .pay-button {
+.pay-button {
     width: 100%;
     padding: 15px;
-    background-color: #007bff;
+    background-color: #dc3545;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -108,19 +114,13 @@ aside.summary {
     font-size: 16px;
 }
 
-.summary .pay-button:hover {
-    background-color: #0056b3;
+.pay-button:hover {
+    background-color: #c82333;
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #333;
-    color: #fff;
+    background-color: #0e0277;
     text-align: center;
     padding: 20px;
+    color: #fff;
 }
-
-
-

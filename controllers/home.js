@@ -1,10 +1,11 @@
-import { authState } from "./app.js";
-import { addBikeData, getAllBikes } from "./db/database.js";
+import { auth } from "./app.js";
+import {  getAllBikes } from "./db/database.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   const catalogoContainer = document.getElementById("catalogo-container");
   const carouselTrack = document.getElementById("carousel-track");
   const profileSection = document.getElementById("profile-section");
+  const cerrarSesionBtn = document.querySelector('.cerrar-sesion-btn');
 
   await getAllBikes().then((bikes) => {
     bikes.forEach((bike) => {
@@ -64,15 +65,28 @@ document.addEventListener("DOMContentLoaded", async () => {
     moveToSlide(track, currentSlide, nextSlide);
   });
 
-  await authState((user) => {
-    if (user) {
-      profileSection.innerHTML = `
-        <a href="./templates/profile.html" class="register-link">Ir a perfil</a>
-      `;
+  // Función para mostrar u ocultar el botón de cerrar sesión.
+  function toggleCerrarSesion(sesionIniciada) {
+    if (sesionIniciada) {
+        cerrarSesionBtn.style.display = 'block'; // Muestra el botón.
     } else {
-      profileSection.innerHTML = `
-        <a href="./templates/register.html" class="register-link">Registro | Iniciar Sesión</a>
-      `;
+        cerrarSesionBtn.style.display = 'none'; // Oculta el botón.
     }
+  }
+
+  // Llama a la función para establecer la visibilidad inicial del botón.
+  toggleCerrarSesion(false); // Suponiendo que inicialmente no hay sesión iniciada.
+
+  // Agrega un event listener al botón de cerrar sesión para ocultarlo cuando se haga clic.
+  cerrarSesionBtn.addEventListener('click', function() {
+    // Realiza aquí cualquier lógica necesaria para cerrar la sesión.
+    // Por ejemplo, cambia el estado de la sesión o realiza una acción de cierre de sesión.
+    // Luego, llama a la función para ocultar el botón de cerrar sesión.
+    toggleCerrarSesion(false);
+  });
+
+  // Observa el estado de autenticación y actualiza la visibilidad del botón de cerrar sesión.
+  auth((user) => {
+    toggleCerrarSesion(user !== null); // Si hay un usuario autenticado, muestra el botón de cerrar sesión.
   });
 });

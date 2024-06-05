@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="../styles/perfil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Botón para volver al índice -->
+    <button id="back-button" onclick="window.location.href='../index.html'">
+        <i class="fas fa-arrow-left"></i>
+    </button>
+
+    <!-- Contenedor para el card del usuario -->
+    <div id="card-usuario" class="card-container"></div>
+
+    <!-- Mensaje de confirmación -->
+    <div id="mensaje-confirmacion"></div>
+
+    <!-- Agrega el script para mostrar la información del usuario -->
+    <script type="module" src="../controllers/perfil.js" defer></script>
+</body>
+</html>

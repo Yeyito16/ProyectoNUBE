@@ -5,18 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carro de compras</title>
     <link rel="stylesheet" href="../styles/carrito.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>DIEGO IPHONE</h1>
+        <div class="header-inner">
+            <h1 class="logo">DIEGO IPHONE</h1>
+        </div>
     </header>
     <div class="container">
         <main>
             <div class="product">
-                <img src="/Resources/imgini.png" alt="Bicicleta de montaña">
+                <img src="/Resources/images/iPhone-12-Mini.webp" alt="iPhone-12-Mini">
                 <div class="product-details">
-                    <h2>Iphone</h2>
-                    <p class="price">$5.000.000</p>
+                    <h2>Iphone 12 Mini</h2>
+                    <p class="price">$2.149.900</p>
                     <label for="quantity1">Cantidad:</label>
                     <select id="quantity1" name="quantity" onchange="updateTotal()">
                         <option value="1">1</option>
@@ -30,10 +33,10 @@
             </div>
 
             <div class="product">
-                <img src="/Resources/imgini.png" alt="Bicicleta de montaña">
+                <img src="/Resources/images/iphone-14-plus.webp" alt="iphone-14-plus">
                 <div class="product-details">
-                    <h2>Iphone</h2>
-                    <p class="price">$3.000.000</p>
+                    <h2>Iphone 14 Plus</h2>
+                    <p class="price">$4.299.000</p>
                     <label for="quantity2">Cantidad:</label>
                     <select id="quantity2" name="quantity" onchange="updateTotal()">
                         <option value="1">1</option>
@@ -48,13 +51,15 @@
         </main>
         <aside class="summary">
             <h2>Resumen de Compra</h2>
-            <p>Total de Productos: <span id="totalProducts">0</span></p>
-            <p>Total a Pagar: $<span id="totalPrice">0</span></p>
-            <button class="pay-button" id="rentButton">Rentar</button>
+            <div class="summary-details">
+                <p>Total de Productos: <span id="totalProducts">0</span></p>
+                <p>Total a Pagar: $<span id="totalPrice">0</span></p>
+            </div>
+            <button class="pay-button" id="rentButton" onclick="redirectToPayment()">Comprar</button>
         </aside>
     </div>
     <footer>
-        <p>&copy; Diego Iphone</p>
+        <p>&copy; Diego Iphone - Calidad en tecnología.</p>
     </footer>
 
     <script>
@@ -63,12 +68,12 @@
             let totalPrice = 0;
             document.querySelectorAll('.product').forEach(product => {
                 const quantity = parseInt(product.querySelector('select').value);
-                const price = parseFloat(product.querySelector('.price').textContent.replace('$', ''));
+                const price = parseFloat(product.querySelector('.price').textContent.replace('$', '').replace('.', '').replace('.', ''));
                 totalProducts += quantity;
                 totalPrice += quantity * price;
             });
             document.getElementById('totalProducts').textContent = totalProducts;
-            document.getElementById('totalPrice').textContent = totalPrice.toFixed(2);
+            document.getElementById('totalPrice').textContent = totalPrice.toLocaleString('es-ES');
         }
 
         function removeProduct(button) {
@@ -88,3 +93,4 @@
     </script>
 </body>
 </html>
+

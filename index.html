@@ -4,12 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RentApp Web</title>
-
+    <title>Diego Iphone</title>
     <link rel="stylesheet" href="./styles/main.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </head>
 
 <body>
@@ -19,21 +16,27 @@
             <nav class="menu-desplegable">
                 <button class="menu-button"><i class='bx bx-menu'></i></button>
                 <ul class="menu-list">
-                    <li><a href="#centro-ayuda">Centro de Ayuda</a></li>
-                    <li><a href="#suscripciones">Suscripciones</a></li>
+                    <li><a href="#Perfil" class="perfil-btn">Perfil</a></li>
+                    <li><a href="#centro-ayuda">Caracteristicas</a></li>
+                    <li><a href="#suscripciones">Promociones</a></li>
                     <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+                    <li><a href="#Cerrar-Sesion" class="cerrar-sesion-btn">Cerrar Sesión</a></li>
                 </ul>
             </nav>
             <h1>Diego Iphone</h1>
-            <div id="profile-section"></div>
+            <div class="auth-buttons">
+                <button class="auth-button" id="login-btn">Iniciar Sesión</button>
+                <button class="auth-button" id="register-btn">Registrarse</button>
+            </div>
         </div>
+
     </header>
 
     <section class="busqueda-renta">
-        <h2>Encuentra el iPhone indicado</h2>
+        <h1>Encuentra el iPhone indicado</h1>
         <form class="busqueda-form">
             <div class="input-box">
-                <label for="modelo">Modelo</label>
+            </div>
                 <div class="input-container">
                     <select id="modelo" name="modelo" required>
                         <option value="">Selecciona un modelo</option>
@@ -71,6 +74,52 @@
             <button class="carousel-button left"><i class='bx bxs-left-arrow'></i></button>
             <div class="carousel-track-container">
                 <ul id="carousel-track" class="carousel-track">
+                    <a href="#" class="discount-item">
+                        <img src="./resources/images/iphone_11.webp" alt="Descuento iPhone 11">
+                        <h3>iPhone 11</h3>
+                        
+                    </a>
+        
+                    <a href="#" class="discount-item">
+                        <img src="./resources/images/iphone_11_pro.jpeg" alt="Descuento iPhone 11 pro">
+                        <h3>iPhone 11 pro</h3>
+                        
+                    </a>
+        
+                    <a href="#" class="discount-item">
+                        <img src="./resources/images/iPhone-12-Mini.webp" alt="Descuento iPhone 12 mini">
+                        <h3>iPhone 12 mini</h3>
+                        
+                    </a>
+                    <a href="#" class="discount-item">
+                        <img src="./resources/images/iphone_12_pro.jpeg" alt="Descuento iPhone 12 pro">
+                        <h3>iPhone 12 pro</h3>
+                        
+                    </a>
+                    <a href="#" class="discount-item">
+                        <img src="./resources/images/iphone_13_mini.jpg" alt="Descuento iPhone 13 mini">
+                        <h3>iPhone 13 mini</h3>
+                        
+                    </a>
+                    <a href="#" class="discount-item">
+                        <img src="./resources/images/iphone_13_pro_max.jpg" alt="Descuento iPhone 13 pro max">
+                        <h3>iPhone 13 pro max</h3>
+                        
+                    </a>
+                    <a href="#" class="discount-item">
+                        <img src="./resources/images/iphone-14-plus.webp" alt="Descuento iPhone 14">
+                        <h3>iPhone 14 plus</h3>
+                    </a>
+                    
+                    <a href="#" class="discount-item">
+                        <img src="./resources/images/iphone_15.webp" alt="Descuento iPhone 15">
+                        <h3>iPhone 15</h3>
+                        
+                    </a>
+                    <a href="#" class="discount-item">
+                        <img src="./resources/images/iPhone_15_Pro_Max.webp" alt="Descuento iPhone 15">
+                        <h3>iPhone 15 pro max</h3>
+                    </a>
 
                 </ul>
             </div>
@@ -80,28 +129,85 @@
 
     <section class="descuentos">
         <h2>Ofertas</h2>
-        <div class="discounts-container">
-            <a href="" class="discount-item">
+        <div class="discounts-container horizontal">
+            <a href="#" class="discount-item">
                 <img src="./resources/images/iPhone_15_Pro_Max.webp" alt="Descuento iPhone 15 Pro Max">
                 <h3>iPhone 15 Pro Max Usado</h3>
                 <p>Descuento: 15%</p>
             </a>
 
-            <a href="" class="discount-item">
+            <a href="#" class="discount-item">
                 <img src="./resources/images/iphone_15.webp" alt="Descuento iPhone 15">
                 <h3>iPhone 15 Usado</h3>
                 <p>Descuento: 15%</p>
+            </a>
+
+            <a href="#" class="discount-item">
+                <img src="./resources/images/iphone_12.webp" alt="Descuento iPhone 15">
+                <h3>iPhone 12 Usado</h3>
+                <p>Descuento: 17%</p>
             </a>
         </div>
     </section>
 
     <section class="catalogo">
         <h2>Catálogo de iPhones</h2>
-        <div id="catalogo-container" class="catalogo-container">
+        <div class="discounts-container horizontal">
+            <a href="#" class="discount-item">
+                <img src="./resources/images/iphone_11.webp" alt="Descuento iPhone 11">
+                <h3>iPhone 11</h3>
+                <p>$2.300.000</p>
+            </a>
 
+            <a href="#" class="discount-item">
+                <img src="./resources/images/iphone_11_pro.jpeg" alt="Descuento iPhone 11 pro">
+                <h3>iPhone 11 pro</h3>
+                <p>$3.200.000</p>
+            </a>
+
+            <a href="#" class="discount-item">
+                <img src="./resources/images/iPhone-12-Mini.webp" alt="Descuento iPhone 12 mini">
+                <h3>iPhone 12 mini</h3>
+                <p>$2.899.000</p>
+            </a>
+            <a href="#" class="discount-item">
+                <img src="./resources/images/iphone_12_pro.jpeg" alt="Descuento iPhone 12 pro">
+                <h3>iPhone 12 pro</h3>
+                <p>$5.399.000</p>
+            </a>
+            <a href="#" class="discount-item">
+                <img src="./resources/images/iphone_13_mini.jpg" alt="Descuento iPhone 13 mini">
+                <h3>iPhone 13 mini</h3>
+                <p>$3.799.000</p>
+            </a>
+            <a href="#" class="discount-item">
+                <img src="./resources/images/iphone_13_pro_max.jpg" alt="Descuento iPhone 13 pro max">
+                <h3>iPhone 13 pro max</h3>
+                <p>$6.449.000</p>
+            </a>
+            <a href="#" class="discount-item">
+                <img src="./resources/images/iphone-14-plus.webp" alt="Descuento iPhone 14">
+                <h3>iPhone 14 plus</h3>
+                <p>$4.299.000</p>
+            </a>
+            <a href="#" class="discount-item">
+                <img src="./resources/images/iphone_14_pro_max.webp" alt="Descuento iPhone 14">
+                <h3>iPhone 14 pro max</h3>
+                <p>$7.409.000</p>
+            </a>
+            <a href="#" class="discount-item">
+                <img src="./resources/images/iphone_15.webp" alt="Descuento iPhone 15">
+                <h3>iPhone 15</h3>
+                <p>4.688.960%</p>
+            </a>
+            <a href="#" class="discount-item">
+                <img src="./resources/images/iPhone_15_Pro_Max.webp" alt="Descuento iPhone 15">
+                <h3>iPhone 15 pro max</h3>
+                <p>$5.569.000</p>
+            </a>
+            
         </div>
     </section>
-
 
     <section id="centro-ayuda" class="contacto">
         <h2>Características</h2>
@@ -109,37 +215,31 @@
             <div class="caracteristicas-item">
                 <h3>Diseño y Construcción</h3>
                 <p>Chip A17 Pro con GPU de 6 núcleos</p>
-                <a href="#">Aprende más</a>
             </div>
 
             <div class="caracteristicas-item">
                 <h3>Pantalla</h3>
                 <p>Alta resolución y densidad de píxeles para una visualización nítida y clara</p>
-                <a href="#">Aprende más</a>
             </div>
 
             <div class="caracteristicas-item">
                 <h3>Cámaras</h3>
                 <p>Capacidades de grabación en 4K, estabilización óptica de imagen, y modos de grabación lenta y rápida.</p>
-                <a href="#">Aprende más</a>
             </div>
 
             <div class="caracteristicas-item">
                 <h3>Seguridad y Privacidad</h3>
                 <p>Fuerte enfoque en la privacidad del usuario con encriptación de datos y control sobre el acceso de las aplicaciones a la información personal.</p>
-                <a href="#">Aprende más</a>
             </div>
 
             <div class="caracteristicas-item">
                 <h3>Conectividad</h3>
                 <p>Compatibilidad con redes 4G LTE y 5G, NFC para pagos móviles con Apple Pay y otras funcionalidades</p>
-                <a href="#">Aprende más</a>
             </div>
 
             <div class="caracteristicas-item">
                 <h3>Asistente Virtual</h3>
                 <p>SIRI asistente virtual con capacidades de control por voz y funciones inteligentes.</p>
-                <a href="#">Aprende más</a>
             </div>
         </div>
 
@@ -151,21 +251,21 @@
                 <h3>iPhone 13 Pro + AirPods</h3>
                 <img src="./resources/images/13_pro_y_airpods.avif" alt="iPhone 13 Pro y AirPods">
                 <p>$4.067.999</p>
-                <button>Ver más</button>
+                <button class="btn-ver-mas">Ver más</button>
             </div>
 
             <div class="plan-item" onclick="window.location.href='#'">
                 <h3>iPhone 13 Pro + Apple Watch</h3>
                 <img src="./resources/images/13_pro_y_apple_watch.avif" alt="iPhone 13 Pro y Apple Watch">
                 <p>$4.349.990</p>
-                <button>Ver más</button>
+                <button class="btn-ver-mas">Ver más</button>
             </div>
 
             <div class="plan-item" onclick="window.location.href='#'">
                 <h3>iPhone 14 Plus + Apple Watch + AirPods</h3>
                 <img src="./resources/images/iphone_14_plus_apple_airpods.jpg" alt="iPhone 14 Plus, Apple Watch y AirPods">
                 <p>$4.990.900</p>
-                <button>Ver más</button>
+                <button class="btn-ver-mas">Ver más</button>
             </div>
 
         </div>
@@ -217,19 +317,12 @@
         </div>
     </section>
 
-
-
     <footer>
-        <div class="social-media">
-            <a href="https://facebook.com" target="_blank"><i class='bx bxl-facebook'></i></a>
-            <a href="https://twitter.com" target="_blank"><i class='bx bxl-twitter'></i></a>
-            <a href="https://instagram.com" target="_blank"><i class='bx bxl-instagram'></i></a>
-        </div>
-        <p>&copy; LA MEJOR CALIDAD EN TECNOLOGÍA</p>
+        <p>&copy; Diego Iphone-Calidad en tegnologia.</p>
     </footer>
 
+    <script type="module" src="/controllers/index.js"></script>
     <script type="module" src="/controllers/home.js"></script>
 </body>
 
 </html>
-

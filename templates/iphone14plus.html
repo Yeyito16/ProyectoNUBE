@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone 14 plus</title>
+    <link rel="stylesheet" href="../styles/producto.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <h1>Diego Iphone</h1>
+        <a href="./Carro.html" class="cart-button"><i class='bx bx-cart'></i> Carrito (<span id="cart-count">0</span>)</a>
+    </header>
+
+    <main>
+        <section class="producto">
+            <div class="producto-imagen">
+                <img src="../resources/images/iphone-14-plus.webp" alt="iPhone 14">
+            </div>
+            
+            <div class="producto-detalles">
+                <h2>iPhone 14 plus</h2>
+                <h3> 128GB</h3>
+                <p class="precio">$ 4.299.000 </p>
+                <div class="medios-pago">
+                    <h3>Pagos PSE</h3>
+                    <p>Visa, Bancolombia, MasterCard, Nequi</p>
+                </div>
+                <div class="producto-acciones">
+                    <button id="btnrent" class="btn btn-primary">Comprar</button>
+                    <button id="btnaddcar" class="btn btn-secondary">Agregar al Carrito</button>
+                </div>
+                <p class="fabricante">Apple</p>
+                
+            </div>
+        </section>
+
+        <section class="especificaciones">
+            <h2>Especificaciones Técnicas</h2>
+            <table>
+                <tr>
+                    <th>Característica</th>
+                    <th>Detalle</th>
+                </tr>
+                <tr>
+                    <td>Pantalla</td>
+                    <td>OLED Super Retina XDR de 6.7 pulgadas con ProMotion</td>
+                </tr>
+                <tr>
+                    <td>Chip</td>
+                    <td>A15 Bionic</td>
+                </tr>
+                <tr>
+                    <td>Cámaras</td>
+                    <td>Doble cámara de 12 MP (gran angular y ultra gran angular)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Funciones</td>
+                    <td> Face ID, video 4K, Modo Acción, Photonic Engine, MagSafe, 5G, resistencia al agua y al polvo (IP68)</td>
+                </tr>
+                
+            </table>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; Diego iphone</p>
+    </footer>
+
+    <script type="module">
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Otro código de inicialización puede ir aquí
+            
+            // Inicializa el contador del carrito a 0
+            let cartCounter = 0;
+        
+            const btnAddToCart = document.getElementById('btnaddcar');
+            const cartButton = document.getElementById('cart-button');
+        
+            btnAddToCart.addEventListener('click', async () => {
+                // Aquí puedes agregar la lógica para agregar el producto al carrito
+                // Por ejemplo, podrías almacenar el ID del producto en un arreglo o en localStorage
+                // Luego, actualiza el contador del carrito o realiza cualquier otra acción necesaria
+                
+                // Incrementa el contador del carrito
+                cartCounter++;
+        
+                // Actualiza el texto del botón del carrito con el nuevo número
+                if (cartButton) {
+                    cartButton.innerText = `Carrito (${cartCounter})`;
+                }
+        
+                alert('¡Producto agregado al carrito!');
+            
+            });
+        function redirectToPayment() {
+        const nombreProducto = "Iphone 14plus";
+        const precioProducto = "4299000";
+        const urlPago = `pago.html?producto=${encodeURIComponent(nombreProducto)}&precio=${encodeURIComponent(precioProducto)}`;
+        window.location.href = urlPago;
+    }
+});
+</script>
+</body>
+</html>
