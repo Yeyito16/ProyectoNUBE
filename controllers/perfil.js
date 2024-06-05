@@ -10,7 +10,6 @@ async function mostrarInformacionUsuario(uid) {
         const usuarioSnap = await getDoc(usuarioRef);
         if (usuarioSnap.exists()) {
             const usuarioData = usuarioSnap.data();
-            // Muestra la información en el card
             const cardUsuario = document.getElementById("card-usuario");
             cardUsuario.innerHTML = `
                 <div class="card">
@@ -25,9 +24,8 @@ async function mostrarInformacionUsuario(uid) {
                 </div>
             `;
 
-            // Agrega el evento de click al botón de actualización
             document.getElementById("update-button").addEventListener("click", () => {
-                // Mostrar campos de entrada adicionales para actualizar los datos
+      
                 cardUsuario.innerHTML += `
                     <div id="update-fields">
                         <h3>Actualizar Datos</h3>
@@ -42,12 +40,11 @@ async function mostrarInformacionUsuario(uid) {
                     </div>
                 `;
 
-                // Agrega el evento de submit al formulario de actualización
+ 
                 document.getElementById("update-form").addEventListener("submit", async (event) => {
-                    event.preventDefault(); // Evita el envío del formulario por defecto
+                    event.preventDefault(); 
                     alert('Datos actualizados correctamente');
 
-                    // Obtén los nuevos valores de los campos
                     const nuevoNombre = document.getElementById("new-nombre").value;
                     const nuevoEmail = document.getElementById("new-email").value;
                     const nuevoTelefono = document.getElementById("new-telefono").value;
@@ -55,7 +52,6 @@ async function mostrarInformacionUsuario(uid) {
                     const nuevaFecha = document.getElementById("new-fecha").value;
 
                     try {
-                        // Actualiza los datos en la base de datos
                         await updateDoc(usuarioRef, {
                             nombre: nuevoNombre,
                             email: nuevoEmail,
@@ -64,12 +60,11 @@ async function mostrarInformacionUsuario(uid) {
                             fecha: nuevaFecha
                         });
 
-                        // Muestra un mensaje de éxito o actualiza la interfaz de usuario según sea necesario
                         console.log("Datos actualizados exitosamente.");
-                        // Podrías mostrar un mensaje en la interfaz indicando que los datos se han actualizado correctamente
+                        
                     } catch (error) {
                         console.error("Error al actualizar los datos:", error);
-                        // Podrías mostrar un mensaje de error en la interfaz o manejar el error de otra manera
+                        
                     }
                 });
             });
@@ -87,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
             mostrarInformacionUsuario(user.uid);
         } else {
             console.log("No hay ningún usuario autenticado.");
-            // Redireccionar al usuario a la página de login o mostrar un mensaje
+
         }
     });
 });

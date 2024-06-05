@@ -155,8 +155,8 @@ select {
     color: black;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
-    flex: 1 1 250px; /* Agregamos esto para definir el ancho máximo de cada elemento */
-    max-width: calc(33.33% - 1rem); /* Establecemos el ancho máximo de cada elemento */
+    flex: 1 1 250px; 
+    max-width: calc(33.33% - 1rem);
 }
 
 .discount-item:hover {

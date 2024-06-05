@@ -39,8 +39,8 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    max-width: 90%; /* Ancho máximo del card */
-    margin: 0 auto; /* Centrar horizontalmente */
+    max-width: 90%; 
+    margin: 0 auto; 
     text-align: center;
     position: relative;
 }

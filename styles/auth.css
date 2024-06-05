@@ -11,7 +11,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Cambiado a min-height para asegurarnos de que se expanda al contenido */
+    min-height: 100vh; 
     background-color: #f3f4f6;
 }
 
@@ -30,16 +30,16 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-image: url('../resources/images/Fondito.jpg'); /* Reemplaza con la ruta correcta de tu imagen */
+    background-image: url('../resources/images/Fondito.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 100vh; /* Ajustado para que ocupe toda la altura de la ventana */
+    min-height: 100vh; 
 }
 
 .wrapper {
     width: 420px;
-    max-width: 80%; /* Cambiado a un porcentaje para que se ajuste al tamaño de la ventana */
+    max-width: 80%; 
     backdrop-filter: blur(15px);
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
     border-radius: 8px;

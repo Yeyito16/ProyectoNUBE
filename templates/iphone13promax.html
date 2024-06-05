@@ -71,68 +71,7 @@
     </footer>
 
     <script type="module">
-        import { getCeluById, getRandomCelu } from "../controllers/db/database.js";
-    
-        document.addEventListener('DOMContentLoaded', async () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const celuId = urlParams.get('celuId');
-    
-            if (bikeId) {
-                const celuDoc = await getCeluById(bikeId);
-                if (bikeDoc.exists()) {
-                    const celuData = celuDoc.data();
-                    document.querySelector('.producto-imagen img').src = celuData.picture || "../resources/images/imgini.png";
-                    document.querySelector('.producto-detalles h2').innerText = celuData.celuName;
-                    document.querySelector('.producto-detalles .precio').innerText = `$${celuData.pricePerDay}`;
-                    document.querySelector('.fabricante').innerText = `Propietario: ${celuData.username || "Desconocido."}`;
-    
-                    // Populate technical specifications
-                    const specsTable = document.querySelector('.especificaciones table');
-                    specsTable.innerHTML = `
-                        <tr>
-                            <th>Característica</th>
-                            <th>Detalle</th>
-                        </tr>
-                        <tr>
-                            <td>Pantalla</td>
-                            <td>${celuData.frameMaterial || "Desconocido"}</td>
-                        </tr>
-                        <tr>
-                            <td>Chip</td>
-                            <td>${celuData.wheelSize || "Desconocido"}</td>
-                        </tr>
-                        <tr>
-                            <td>Cámaras</td>
-                            <td>${celuData.suspension || "Desconocido"}</td>
-                        </tr>
-                        <tr>
-                            <td>Funciones</td>
-                            <td>${celuData.brakes || "Desconocidos"}</td>
-                        </tr>
         
-                    `;
-    
-                    // Load similar products
-                    const similarProducts = await getRandomBikes(celuId);
-                    const similarProductsContainer = document.getElementById('similar-products-container');
-                    similarProducts.forEach(bike => {
-                        const celuItem = document.createElement('a');
-                        celuItem.href = `./details.html?celuId=${celu.id}`;
-                        celuItem.classList.add('celu-item');
-                        celuItem.innerHTML = `
-                            <img src="${celu.picture || '../resources/images/imgini.png'}" alt="${celu.bikeName}">
-                            <h3>${celu.bikeName}</h3>
-                            <p>Precio: $${celu.pricePerDay}</p>
-                        `;
-                        similarProductsContainer.appendChild(celuItem);
-                    });
-                } else {
-                    console.error("No Iphone found for the given celuId.");
-                }
-            } else {
-                console.error("No celuId provided in URL.");
-            }
-        });
     </script>
 </body>
 </html>

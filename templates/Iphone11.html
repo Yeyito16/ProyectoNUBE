@@ -72,23 +72,16 @@
 
     <script type="module">
 document.addEventListener('DOMContentLoaded', async () => {
-    // Otro código de inicialización puede ir aquí
-    
-    // Inicializa el contador del carrito a 0
+
     let cartCounter = 0;
 
     const btnAddToCart = document.getElementById('btnaddcar');
     const cartButton = document.getElementById('cart-button');
 
     btnAddToCart.addEventListener('click', async () => {
-        // Aquí puedes agregar la lógica para agregar el producto al carrito
-        // Por ejemplo, podrías almacenar el ID del producto en un arreglo o en localStorage
-        // Luego, actualiza el contador del carrito o realiza cualquier otra acción necesaria
-        
-        // Incrementa el contador del carrito
+
         cartCounter++;
 
-        // Actualiza el texto del botón del carrito con el nuevo número
         if (cartButton) {
             cartButton.innerText = `Carrito (${cartCounter})`;
         }

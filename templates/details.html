@@ -72,7 +72,7 @@
         <section class="otras-bicicletas">
             <h2>Productos Similares</h2>
             <div class="otras-bicicletas-container" id="similar-products-container">
-                <!-- Productos similares se cargarán aquí -->
+
             </div>
         </section>
     </main>
@@ -97,7 +97,6 @@
                     document.querySelector('.producto-detalles .precio').innerText = `$${bikeData.pricePerDay}`;
                     document.querySelector('.fabricante').innerText = `Propietario: ${bikeData.username || "Desconocido."}`;
     
-                    // Populate technical specifications
                     const specsTable = document.querySelector('.especificaciones table');
                     specsTable.innerHTML = `
                         <tr>
@@ -126,7 +125,6 @@
                         </tr>
                     `;
     
-                    // Load similar products
                     const similarProducts = await getRandomBikes(bikeId);
                     const similarProductsContainer = document.getElementById('similar-products-container');
                     similarProducts.forEach(bike => {

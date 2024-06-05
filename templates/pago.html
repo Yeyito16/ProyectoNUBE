@@ -55,12 +55,11 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // Obtener los parámetros de la URL
+
         const params = new URLSearchParams(window.location.search);
         const producto = params.get('producto');
         const precio = params.get('precio');
 
-        // Mostrar los detalles del producto en la página
         document.getElementById('producto').textContent = producto;
         document.getElementById('precio').textContent = precio;
     });

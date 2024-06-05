@@ -59,9 +59,8 @@ export const loginvalidation = async (email, password) => {
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
-    const uid = user.uid; // Utilizar el ID proporcionado en lugar del UID
+    const uid = user.uid; 
 
-    // Buscar el documento del usuario por el ID
     const userDoc = await getDoc(doc(db, "users", uid));
 
     if (userDoc.exists()) {
@@ -99,10 +98,8 @@ export const registerUser = async (email, id, password , nombre, direccion, tele
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
 
-    // Obtener el uid del usuario
     const uid = user.uid;
 
-    // Crear el documento del usuario con uid
     await setDoc(doc(db, "users", uid), {
       id: id,
       email: email,
@@ -111,7 +108,7 @@ export const registerUser = async (email, id, password , nombre, direccion, tele
       telefono: telefono,
       fecha: fecha,
       role: 'user',
-      uid: uid // Agregar uid al documento del usuario
+      uid: uid 
     });
 
     console.log('Documento del usuario creado con UID:', uid);
